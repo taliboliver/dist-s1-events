@@ -39,3 +39,14 @@ We use the following sources for generating these datasets.
 4. Hand drawn delineations
 
 There will be additional sources used to derive forthecoming sites. For now, all the sites in this repository (i.e. in `events/`) are derived from the above 3 sources. We note that all the datasets are mostly delineated using *optical* sensors (either Sentinel-2, Landsat, planet or other VHR sensors and the exact provenance of each dataset can be traced using the source data). There are few that use Sentinel-1 SAR sensor that we will use for disturbance mapping (e.g. `demak_flood_2024`). Generally, optically-derived delineations are valuable datasets for calibrating/validating SAR disturbances as some aspects of the event will be visible in one sensor but not the other and vice versa. We highlight that validating any imagery across sensors can be impacted by the differences in acquisition time, particularly when imaging dynamic events like floods. In other words, care must be used for *each* event!
+
+
+## Additional Setup for Localization of RTC-S1 inputs
+
+To download all the the necessary RTC-S1 inputs, it is necesary to create a ~/.netrc file with your [earthdata login](https://urs.earthdata.nasa.gov/users/new) credentials that can be used at the Alaska Satellite Facility (ASF) data portal to download data. The netrcfile should have the following entry:
+
+```
+machine urs.earthdata.nasa.gov
+    login <username>
+    password <password>
+```
